@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import pandas as pd
-from config import DATA_RAW_PATH
+from src.config import DATA_RAW_PATH
 
 
 def load_spam_data(path: str) -> pd.DataFrame:
