@@ -22,12 +22,6 @@ def main():
     output_path = DATA_PROCESSED_PATH / "spam_clean.csv"
     df.to_csv(output_path, index=False, encoding="utf-8")
 
-    print("\n📋 Примеры:")
-    for _, row in df.sample(2).iterrows():
-        print(f"Оригинал: {row['message'][:70]}...")
-        print(f"Обработка: {row['clean_message'][:70]}...")
-        print("-" * 80)
-
 
 if __name__ == "__main__":
     main()
