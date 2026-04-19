@@ -22,7 +22,8 @@ def download_nltk_data() -> bool:
             'stopwords',
             'wordnet', 
             'omw-1.4',
-            'punkt'
+            'punkt',
+            'punkt_tab'
         ]
         
         for resource in resources:
