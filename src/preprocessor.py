@@ -1,4 +1,5 @@
 import string
+import re
 from typing import List
 
 import nltk
@@ -39,6 +40,14 @@ class TextPreprocessor:
     
     def process(self, text: str) -> str:
         text = self.lowercase(text)
+        
+        text = re.sub(r'https?://\S+|www\.\S+', '<URL>', text)
+        text = re.sub(r'<[^>]+>', '<HTML>', text)
+        text = re.sub(r'\S+@\S+\.\S+', '<EMAIL>', text)
+        text = re.sub(r'\$|€|£', '<MONEY>', text)
+        text = re.sub(r'!{1,}', '<ALERT>', text)
+        text = re.sub(r'\s+', ' ', text).strip()             
+        
         text = text.replace('-', ' ')
         text = self.remove_punctuation(text)
         tokens = self.tokenize(text)
