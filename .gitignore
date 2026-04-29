@@ -1,7 +1,8 @@
-spam.csv
 __pycache__
 __init__.py
 nltk_data
-spam_clean.csv
-raw
-processed
+data
+dist
+build
+models
+logs
