@@ -11,9 +11,6 @@ from src.config import NLTK_DATA_PATH
 def download_nltk_data() -> bool:
     """
     Скачивает необходимые корпуса NLTK в папку проекта.
-    
-    Returns:
-        bool: True если успешно, False если ошибка
     """
     try:
         NLTK_DATA_PATH.mkdir(exist_ok=True)
